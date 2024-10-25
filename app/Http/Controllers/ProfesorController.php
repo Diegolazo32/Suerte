@@ -5,11 +5,23 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Alumno;
 use App\Models\AlumnoMateria;
+use App\Models\Profesor;
 use App\Models\ProfesorMateria;
 use Illuminate\Http\Request;
 
 class ProfesorController extends Controller
 {
+
+    public function index()
+    {
+        return Profesor::all();
+    }
+
+    public function getById($id)
+    {
+        return Profesor::find($id);
+    }
+
     public function getAlumnosByProfesor($id)
     {
         $alumnos = [];

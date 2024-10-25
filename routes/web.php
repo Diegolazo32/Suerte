@@ -22,8 +22,8 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::controller(ProfesorController::class, 'profesor')->group(function () {
-        //Route::get('/profesores', 'index')->name('profesor.index');
-        //Route::get('/profesores/{id}', 'getById')->name('profesor.getById');
+        Route::get('/profesores', 'index')->name('profesor.index');
+        Route::get('/profesores/{id}', 'getById')->name('profesor.getById');
         Route::get('/profesores/{id}/alumnos', 'getAlumnosByProfesor')->name('profesor.getAlumnosByProfesor');
     });
 });
